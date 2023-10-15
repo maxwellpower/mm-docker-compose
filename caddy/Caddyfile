@@ -1,0 +1,31 @@
+# Global options
+{
+    email hostmaster@{$DOMAIN}
+}
+
+# Redirect HTTP to HTTPS
+http:// {
+    redir https://{host}{uri}
+}
+
+# Mattermost
+{$MM_SERVICESETTINGS_SITEURL} {
+    reverse_proxy mattermost:8065 {
+        header_up Host {host}
+        header_up X-Real-IP {remote}
+        header_up X-Frame-Options SAMEORIGIN
+    }
+
+    # Additional headers
+    header {
+        X-Frame-Options "SAMEORIGIN"
+        X-XSS-Protection "1; mode=block"
+        X-Content-Type-Options "nosniff"
+        Referrer-Policy no-referrer
+    }
+}
+
+# Grafana
+grafana.{$DOMAIN} {
+    reverse_proxy grafana:3000
+}

@@ -1,0 +1,11 @@
+apiVersion: 1
+
+datasources:
+  - name: Mattermost
+    type: prometheus
+    access: proxy
+    user: $POSTGRES_USER
+    password: $POSTGRES_PASSWORD
+    url: http://prometheus:9090
+    jsonData:
+      httpMode: GET
