@@ -1,6 +1,6 @@
-# Mattermost Docker
+# Mattermost Docker Compose
 
-A Mattermost Enterprise Docker install proxied with Caddy and includes Prometheus and Grafana.
+A Mattermost Enterprise Docker install including Prometheus and Grafana. Proxied using Caddy.
 
 ## Usage
 
