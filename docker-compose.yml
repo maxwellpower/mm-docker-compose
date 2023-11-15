@@ -1,4 +1,4 @@
-version: "3"
+version: "3.1"
 
 services:
 
@@ -20,8 +20,6 @@ services:
       - POSTGRES_USER
       - POSTGRES_PASSWORD
       - POSTGRES_DB
-    ports:
-      - 5432:5432
 
   ## Mattermost
   mattermost:
@@ -55,9 +53,6 @@ services:
     depends_on:
       - mattermost
     restart: ${RESTART_POLICY}
-    ports:
-      - ${HTTP_PORT}:80
-      - ${HTTPS_PORT}:443
     environment:
       - TZ
       - MM_SERVICESETTINGS_SITEURL
@@ -65,7 +60,10 @@ services:
     volumes:
       - ${CADDY_CONFIG_PATH}/Caddyfile:/etc/caddy/Caddyfile
       - ${CADDY_DATA_PATH}/data:/data
-      - caddy_config:/config
+      - CADDY_CONFIG:/config
+    ports:
+      - ${HTTP_PORT}:80
+      - ${HTTPS_PORT}:443
 
   ## Prometheus
   prometheus:
@@ -91,8 +89,9 @@ services:
       - GF_SECURITY_ADMIN_USER
       - GF_SECURITY_ADMIN_PASSWORD
 
+## Volumes
 volumes:
-  caddy_config:
+  CADDY_CONFIG:
   GRAFANA_STORAGE:
 
 ## Networks
