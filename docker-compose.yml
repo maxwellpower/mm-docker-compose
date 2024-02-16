@@ -1,4 +1,4 @@
-version: "3.1"
+version: "3.2"
 
 services:
 
@@ -20,11 +20,15 @@ services:
       - POSTGRES_USER
       - POSTGRES_PASSWORD
       - POSTGRES_DB
+#    ports:
+#      - ${POSTGRES_EXTERNAL_PORT}:5432/tcp
 
   ## Mattermost
   mattermost:
     depends_on:
       - postgres
+#      - ldap
+      - caddy
     image: mattermost/${MATTERMOST_IMAGE}:${MATTERMOST_IMAGE_TAG}
     restart: ${RESTART_POLICY}
     security_opt:
@@ -46,24 +50,29 @@ services:
       - MM_SQLSETTINGS_DATASOURCE
       - MM_BLEVESETTINGS_INDEXDIR
       - MM_SERVICESETTINGS_SITEURL
+      - MM_PLUGINSETTINGS_PLUGINSTATES
+    ports:
+      - 8443:8443/tcp
+      - 8443:8443/udp
+      - 8045:8045/tcp
 
-  ## Caddy
+  ## Caddy Proxy
   caddy:
-    image: caddy
-    depends_on:
-      - mattermost
+    image: caddy:${CADDY_IMAGE_TAG}
     restart: ${RESTART_POLICY}
     environment:
       - TZ
       - MM_SERVICESETTINGS_SITEURL
+      - GRAFANA_SITEURL
+      - PROM_SITEURL
       - DOMAIN
     volumes:
       - ${CADDY_CONFIG_PATH}/Caddyfile:/etc/caddy/Caddyfile
       - ${CADDY_DATA_PATH}/data:/data
       - CADDY_CONFIG:/config
     ports:
-      - ${HTTP_PORT}:80
-      - ${HTTPS_PORT}:443
+      - ${HTTP_PORT}:80/tcp
+      - ${HTTPS_PORT}:443/tcp
 
   ## Prometheus
   prometheus:
@@ -89,10 +98,23 @@ services:
       - GF_SECURITY_ADMIN_USER
       - GF_SECURITY_ADMIN_PASSWORD
 
+  ## LDAP 
+  ## Planet Express Development Directory
+#  ldap:
+#    image: rroemhild/test-openldap
+#    restart: ${RESTART_POLICY}
+#    volumes:
+#      - LDAP_DATA:/var/lib/ldap
+#      - SLAPD_DATA:/etc/ldap/slapd.d
+#    environment:
+#      - TZ
+
 ## Volumes
 volumes:
   CADDY_CONFIG:
   GRAFANA_STORAGE:
+#  LDAP_DATA:
+#  SLAPD_DATA:
 
 ## Networks
 networks:

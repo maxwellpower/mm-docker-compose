@@ -4,19 +4,25 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "5.1.1"
+      "version": "10.0.4"
     },
     {
       "type": "panel",
       "id": "graph",
-      "name": "Graph",
-      "version": "5.0.0"
+      "name": "Graph (old)",
+      "version": ""
     },
     {
       "type": "datasource",
       "id": "prometheus",
       "name": "Prometheus",
-      "version": "5.0.0"
+      "version": "1.0.0"
+    },
+    {
+      "type": "panel",
+      "id": "timeseries",
+      "name": "Time series",
+      "version": ""
     }
   ],
   "annotations": {
@@ -32,20 +38,20 @@
       }
     ]
   },
-  "editable": true,
-  "gnetId": 2545,
+  "editable": false,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1532611119807,
-  "links": [],
   "panels": [
     {
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Mattermost",
-      "editable": true,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "Mattermost"
+      },
+      "editable": false,
       "error": false,
       "fill": 1,
       "gridPos": {
@@ -144,8 +150,11 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Mattermost",
-      "editable": true,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "Mattermost"
+      },
+      "editable": false,
       "error": false,
       "fill": 1,
       "gridPos": {
@@ -243,8 +252,11 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Mattermost",
-      "editable": true,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "Mattermost"
+      },
+      "editable": false,
       "error": false,
       "fill": 1,
       "gridPos": {
@@ -343,8 +355,11 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Mattermost",
-      "editable": true,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "Mattermost"
+      },
+      "editable": false,
       "error": false,
       "fill": 1,
       "gridPos": {
@@ -441,8 +456,11 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Mattermost",
-      "editable": true,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "Mattermost"
+      },
+      "editable": false,
       "error": false,
       "fill": 1,
       "gridPos": {
@@ -541,7 +559,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Mattermost",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "Mattermost"
+      },
       "fill": 1,
       "gridPos": {
         "h": 8,
@@ -634,7 +655,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Mattermost",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "Mattermost"
+      },
       "fill": 1,
       "gridPos": {
         "h": 8,
@@ -720,8 +744,11 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Mattermost",
-      "editable": true,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "Mattermost"
+      },
+      "editable": false,
       "error": false,
       "fill": 1,
       "gridPos": {
@@ -813,8 +840,11 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Mattermost",
-      "editable": true,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "Mattermost"
+      },
+      "editable": false,
       "error": false,
       "fill": 1,
       "gridPos": {
@@ -906,8 +936,11 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Mattermost",
-      "editable": true,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "Mattermost"
+      },
+      "editable": false,
       "error": false,
       "fill": 1,
       "gridPos": {
@@ -1006,8 +1039,11 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Mattermost",
-      "editable": true,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "Mattermost"
+      },
+      "editable": false,
       "error": false,
       "fill": 1,
       "gridPos": {
@@ -1106,8 +1142,11 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Mattermost",
-      "editable": true,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "Mattermost"
+      },
+      "editable": false,
       "error": false,
       "fill": 1,
       "gridPos": {
@@ -1199,8 +1238,11 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Mattermost",
-      "editable": true,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "Mattermost"
+      },
+      "editable": false,
       "error": false,
       "fill": 1,
       "gridPos": {
@@ -1289,8 +1331,11 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Mattermost",
-      "editable": true,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "Mattermost"
+      },
+      "editable": false,
       "error": false,
       "fill": 1,
       "gridPos": {
@@ -1389,8 +1434,11 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Mattermost",
-      "editable": true,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "Mattermost"
+      },
+      "editable": false,
       "error": false,
       "fill": 1,
       "gridPos": {
@@ -1482,8 +1530,11 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Mattermost",
-      "editable": true,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "Mattermost"
+      },
+      "editable": false,
       "error": false,
       "fill": 1,
       "gridPos": {
@@ -1575,8 +1626,11 @@
       "bars": true,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Mattermost",
-      "editable": true,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "Mattermost"
+      },
+      "editable": false,
       "error": false,
       "fill": 1,
       "gridPos": {
@@ -1670,8 +1724,11 @@
       "bars": true,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Mattermost",
-      "editable": true,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "Mattermost"
+      },
+      "editable": false,
       "error": false,
       "fill": 1,
       "gridPos": {
@@ -1765,8 +1822,11 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Mattermost",
-      "editable": true,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "Mattermost"
+      },
+      "editable": false,
       "error": false,
       "fill": 1,
       "gridPos": {
@@ -1865,8 +1925,11 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Mattermost",
-      "editable": true,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "Mattermost"
+      },
+      "editable": false,
       "error": false,
       "fill": 1,
       "gridPos": {
@@ -1965,8 +2028,11 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Mattermost",
-      "editable": true,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "Mattermost"
+      },
+      "editable": false,
       "error": false,
       "fill": 1,
       "gridPos": {
@@ -2061,19 +2127,30 @@
       }
     }
   ],
-  "refresh": "30s",
+  "refresh": "15s",
   "schemaVersion": 16,
   "style": "dark",
   "tags": [
     "mattermost",
-    "mattermost-perf"
+    "mattermost-performance"
   ],
   "templating": {
     "list": [
       {
         "allValue": null,
-        "current": {},
-        "datasource": "Mattermost",
+        "current": {
+          "selected": true,
+          "text": [
+            "mattermost:8067"
+          ],
+          "value": [
+            "mattermost:8067"
+          ]
+        },
+        "datasource": {
+          "type": "prometheus",
+          "uid": "Mattermost"
+        },
         "hide": 0,
         "includeAll": false,
         "label": "server",
@@ -2123,6 +2200,6 @@
   },
   "timezone": "browser",
   "title": "Mattermost Performance Monitoring (Bonus Metrics)",
-  "uid": "000000013",
-  "version": 34
+  "version": 34,
+  "uid":"ABju7svb7Epa"
 }

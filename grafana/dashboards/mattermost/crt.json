@@ -1,11 +1,10 @@
 {
-  "__elements": [],
   "__requires": [
     {
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "8.3.4"
+      "version": "10.0.4"
     },
     {
       "type": "panel",
@@ -18,6 +17,12 @@
       "id": "prometheus",
       "name": "Prometheus",
       "version": "1.0.0"
+    },
+    {
+      "type": "panel",
+      "id": "timeseries",
+      "name": "Time series",
+      "version": ""
     }
   ],
   "annotations": {
@@ -39,12 +44,10 @@
       }
     ]
   },
-  "editable": true,
+  "editable": false,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1646759397232,
-  "links": [],
   "liveNow": false,
   "panels": [
     {
@@ -409,14 +412,25 @@
       }
     }
   ],
-  "refresh": "10s",
+  "refresh": "15s",
   "schemaVersion": 34,
   "style": "dark",
-  "tags": [],
+  "tags": [
+    "mattermost",
+    "mattermost-threads"
+  ],
   "templating": {
     "list": [
       {
-        "current": {},
+        "current": {
+          "selected": true,
+          "text": [
+            "mattermost:8067"
+          ],
+          "value": [
+            "mattermost:8067"
+          ]
+        },
         "datasource": {
           "type": "prometheus",
           "uid": "Mattermost"
@@ -448,10 +462,9 @@
     "to": "now"
   },
   "timepicker": {},
-  "timezone": "",
+  "timezone": "browser",
   "title": "Collapsed Reply Threads Performance",
-  "uid": "cZY9yFJ7z",
+  "uid": "YFYP6zD87a6T",
   "version": 5,
-  "weekStart": "",
-  "gnetId": 15581
+  "weekStart": ""
 }
