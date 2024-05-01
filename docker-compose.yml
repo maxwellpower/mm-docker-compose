@@ -20,14 +20,14 @@ services:
       - POSTGRES_USER
       - POSTGRES_PASSWORD
       - POSTGRES_DB
-    ports:
- #     - ${POSTGRES_EXTERNAL_PORT}:5432/tcp
+#    ports:
+#      - ${POSTGRES_EXTERNAL_PORT}:5432/tcp
 
   ## Mattermost
   mattermost:
     depends_on:
       - postgres
- #     - ldap
+#      - ldap
       - caddy
     image: mattermost/${MATTERMOST_IMAGE}:${MATTERMOST_IMAGE_TAG}
     restart: ${RESTART_POLICY}
@@ -114,7 +114,7 @@ volumes:
   CADDY_CONFIG:
   GRAFANA_STORAGE:
 #  LDAP_DATA:
-  SLAPD_DATA:
+#  SLAPD_DATA:
 
 ## Networks
 networks:
